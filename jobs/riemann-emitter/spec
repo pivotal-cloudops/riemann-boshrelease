@@ -5,6 +5,7 @@ templates:
   bin/riemann-health_ctl.erb: bin/riemann-health_ctl
   bin/riemann-net_ctl.erb: bin/riemann-net_ctl
   bin/riemann-rds_ctl.erb: bin/riemann-rds_ctl
+  bin/riemann-elastic_ctl.erb: bin/riemann-elastic_ctl
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
 packages:
@@ -40,3 +41,10 @@ properties:
 
   riemann_emitter.rds.secret_access_key:
     description: "AWS secret access key to use when collecting CloudWatch metrics."
+
+  riemann_emitter.elastic.host:
+    description: "Host of the elastic instance to emit metrics for."
+
+  riemann_emitter.elastic.port:
+    description: "Port of the elastic instance to emit metrics for."
+    default: 9200
