@@ -35,6 +35,7 @@ case $1 in
     fi
 
     exec chpst -u vcap:vcap \
+      timeout 6h \
       java -server -XX:+UseConcMarkSweepGC -XX:+UseParNewGC \
       -XX:+CMSParallelRemarkEnabled -XX:+AggressiveOpts \
       -XX:+UseFastAccessorMethods -XX:+UseCompressedOops \
